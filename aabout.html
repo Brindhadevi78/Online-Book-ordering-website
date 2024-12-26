@@ -1,0 +1,154 @@
+<html>
+<head>
+    <title>About Us</title>
+    <style>
+            
+            header {
+            background-color: #f0f8ff;         
+            color: black;
+            padding: 50px 20px;
+            text-align: center;
+            }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color:#89cff0;
+            padding: 15px 0;
+            }
+
+        nav a {
+            color:black;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s;
+        }
+
+        nav a:hover {
+            background-color: #007B8C;
+            transform: scale(1.1);
+        }
+
+
+        .content {
+            padding: 50px;
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+        }
+
+        .content h2 {
+            color:black;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            color: #007B8C;
+        }
+
+                footer {
+            text-align: center;
+            padding: 20px;
+            background-color:#89cff0 ;
+            color: black;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 40px;
+        }
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 30px;
+            }
+
+            .content h2 {
+                font-size: 2rem;
+            }
+
+            .content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .content {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+
+    <nav>
+        <a href="story-time.html">Home</a>
+        <a href="catagory.html">Catagory</a>
+        <a href="review.html">Review</a>
+        <a href="#">About Us</a>
+    </nav>
+
+    <div class="content">
+        <h2>Who We Are</h2>
+        <p>
+            Story Time is your one-stop destination for discovering, exploring, and enjoying books across all genres. <br>
+            We are passionate about connecting readers with stories that inspire, educate, and entertain. <br>
+            Whether you love fiction, non-fiction, fantasy, or self-help, we have something for every book lover.
+        </p>
+        <h2>Our Mission</h2>
+        <p>
+            Our mission is to foster a love for reading and provide a platform where readers can explore a vast collection of literature 
+            from emerging authors to timeless classics.<br> We aim to build a community of readers who share their love of stories.
+        </p>
+
+        <h2>Contact Us</h2>
+        <p class="contact-info">Email: support@bookhaven.com | Phone: +123 456 7890</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Story Time. All rights reserved.</p>
+    </footer>
+</body>
+</html>

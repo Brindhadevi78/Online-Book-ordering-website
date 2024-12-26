@@ -1,0 +1,439 @@
+<html>
+<head>
+    <title>Story Time</title>
+    <style>
+
+        body {
+            background-color:#e6e6fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #89cff0;
+        }
+
+        .logo {
+            margin-left: 50px;
+        }
+
+        .logo img {
+            display: block;
+            width: 80px;
+            height: 80px;
+        }
+
+        .shop-name h1 {
+            font-size: 50px;
+            text-align: center;
+            color: teal;
+            }
+
+
+        .search-bar input {
+            padding: 5px;
+            width: 200px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .search-bar button {
+            padding: 6px 10px;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button-container button {
+            padding: 6px 12px;
+            background-color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .button-container button i {
+            font-size: 16px;
+        }
+
+        .button-container button:hover {
+            background-color: #f0f0f0;
+        }
+
+        .slider {
+            max-width: 800px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            height: 400px; 
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .navigation button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .navigation button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        .tab.active {
+            color: #007BFF;
+            border-bottom: 2px solid #007BFF;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            margin: 10px;
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .product .price {
+            font-weight: bold;
+            color: #333;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+ footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #89cff0;
+            color:black;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">
+        <img src="img/logo1.webp" alt="Shop Logo"> 
+    </div>
+    <div class="shop-name">
+        <h1>Story Time</h1>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Search products..." />
+        <button onclick="searchProducts()">Search</button>
+    </div>
+    <div class="button-container">
+        <button onclick="goToAbout()"><i class="fas fa-info-circle"></i> About</button>
+        <button onclick="goToCategory()"><i class="fas fa-th"></i> Category</button>
+        <button onclick="goToReview()"><i class="fas fa-star"></i> Review</button>
+    </div>
+</header>
+
+<br><br>
+<h3 style="font-size:25px;color:red;text-align:center;">Christmas Sale !!!<br>30 % Discount For all Books </h3>
+<br><br>
+
+<center>
+    <div class="slider">
+        <div class="slides">
+            <img src="img/img3.webp" alt="Image 4">
+            <img src="img/img1.jpg" alt="Image 1">
+            <img src="img/img3.jpg" alt="Image 2">
+            <img src="img/img4.jpg" alt="Image 3">
+        </div>
+        <div class="navigation">
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+        </div>
+    </div>
+</center>
+
+<script>
+    const slides = document.querySelector('.slides');
+    const images = document.querySelectorAll('.slides img');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+    let currentIndex = 0;
+
+    function updateSliderPosition() {
+        const width = slides.clientWidth; 
+        slides.style.transform = `translateX(${-currentIndex * width}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSliderPosition();
+    });
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length; 
+        updateSliderPosition();
+    });
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSliderPosition();
+    }, 3000);
+</script>
+<br>
+<hr><br>
+
+<div class="container">
+    <h2 style="text-align: center;">Featured Products</h2>
+    <div class="tabs">
+        <div class="tab active" onclick="showTab(0)">New Arrivals</div>
+        <div class="tab" onclick="showTab(1)">Best Selling</div>
+        <div class="tab" onclick="showTab(2)">Top Rated</div>
+    </div>
+
+    <div class="tab-content active">
+        <div class="product">
+            <img src="img/book1.jpg" alt="Product 1">
+            <h3> A Court of Thorns and Roses</h3>
+            <p class="price">cost:149.00</p>
+        </div>
+        <div class="product">
+            <img src="img/image2.jpg" alt="Product 2">
+            <h3>It Ends with Us</h3>
+            <p class="price">cost:120.00</p>
+        </div>
+        <div class="product">
+            <img src="img/book3.jpg" alt="Product 3">
+            <h3>Rich Dad Poor Dad</h3>
+            <p class="price">cost:115.00</p>
+        </div>
+<div class="product">
+            <img src="img/book14.jpg" alt="Product 3">
+            <h3>A New Earth<h3>
+            <p class="price">cost:315.00</p>
+        </div>
+        <div class="product">
+            <img src="img/book7.png" alt="Product 4">
+            <h3>The Lord of the Rings</h3>
+            <p class="price">cost:699.00</p>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div class="product">
+            <img src="img/book4.jpg" alt="Product 5">
+            <h3>Atomic Habits</h3>
+            <p class="price">cost:699.00</p>
+        </div>
+        <div class="product">
+            <img src="img/book5.jpg" alt="Product 6">
+            <h3>Ikigai</h3>
+            <p class="price">cost:195.00</p>
+        </div>
+        <div class="product">
+            <img src="img/book6.jpg" alt="Product 7">
+            <h3>Harry Potter</h3>
+            <p class="price">cost:715.00</p>
+        </div>
+        <div class="product">
+            <img src="img/book8.webp" alt="Product 8">
+            <h3>Naruto Vol 1</h3>
+            <p class="price">cost:215.00</p>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div class="product">
+            <img src="img/book9.jpg" alt="Product 6">
+            <h3>The Good Life</h3>
+            <p class="price">cost:278.00</p>
+        </div>
+        <div class="product">
+            <img src="img/book10.jpg" alt="Product 7">
+            <h3>A Brief History of Time</h3>
+            <p class="price">cost:378.00</p>
+        </div>
+        <div class="product">
+            <img src="img/book13.jpg" alt="Product 8">
+            <h3>Sherlock Holmes</h3>
+            <p class="price">cost:449.00</p>
+        </div>
+        <div class="product">
+            <img src="img/book11.jpg" alt="Product 9">
+            <h3>The Missile Man Of India</h3>
+            <p class="price">cost:349.00</p>
+        </div>
+    </div>
+</div>
+
+
+
+<center>
+<button onclick="goToCategory()"><i class="fas fa-th"></i> See More</button>
+</center>
+
+
+
+<script>
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    function showTab(index) {
+        tabs.forEach((tab, i) => {
+            tab.classList.toggle('active', i === index);
+            tabContents[i].classList.toggle('active', i === index);
+        });
+    }
+
+    function searchProducts() {
+        const searchQuery = document.getElementById('search').value;
+        if (searchQuery.trim() !== '') {
+            alert("Searching for: " + searchQuery);
+        } else {
+            alert("Please enter a search term.");
+        }
+    }
+
+    function goToAbout() {
+        window.location.href = 'aabout.html';  
+    }
+
+    function goToCategory() {
+        window.location.href = 'catagory.html';  
+    }
+
+    function goToReview() {
+        window.location.href = 'review.html';  
+    }
+</script>
+  <div style=" padding: 20px; border-radius: 10px; text-align: center; width: 100%; max-width: 400px;">
+    <h2 style=" margin-bottom: 20px;">Subscribe to Our Newsletter</h2>
+    <form id="newsletterForm">
+      <input type="text" id="firstName" placeholder="First Name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; font-size: 16px;">
+      <input type="text" id="lastName" placeholder="Last Name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; font-size: 16px;">
+      <input type="email" id="email" placeholder="Email Address" required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; font-size: 16px;">
+<input type="text" placeholder="phone number"required style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; font-size: 16px;">
+
+      <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+        Subscribe
+      </button>
+    </form>
+  </div>
+  <script>
+    document.getElementById('newsletterForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const firstName = document.getElementById('firstName').value;
+
+      if (firstName) {
+        alert(`Thank you, ${firstName}, for subscribing!`);
+      } else {
+        alert('Please fill out all fields.');
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+<footer>
+        <p>&copy; 2024 Story Time. All rights reserved.</p>
+        <p>Follow us on <a href="#" >Social Media</a></p>
+    </footer>
+
+</script>
+
+</body>
+</html>
